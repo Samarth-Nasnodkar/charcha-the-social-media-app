@@ -2,6 +2,9 @@ import '../styles/PostCard.css';
 
 export const PostCard = () => {
     const imgUrl = 'https://images.unsplash.com/photo-1715588103170-a86bd7a71db4?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+    const additionalAttachmentUrl = 'https://images.unsplash.com/photo-1715586041798-9583f0642747?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+    const remAttachmentUrl = 'https://images.unsplash.com/photo-1715760407683-9435ede6be95?q=80&w=2805&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+    let attachmentCount = 3;
     return (
         <div className='post-card-main'>
             <div className="card-header">
@@ -20,7 +23,20 @@ export const PostCard = () => {
                 <div className="time-posted">Just Now</div>
             </div>
             <div className="card-attachments">
-                <img src={imgUrl} alt='attachment'/>
+                <div className="primary-attachment">
+                    <img src={imgUrl} alt='attachment'/>
+                </div>
+                {attachmentCount > 1 &&
+                    <div className="secondary-attachment">
+                        <img src={additionalAttachmentUrl} alt='attachment'/>
+                        {attachmentCount > 2 &&
+                            <div className="rem-attachments">
+                                <img src={remAttachmentUrl} alt='attachment'/>
+                                <div className="rem-count">{`+${attachmentCount - 2}`}</div>
+                            </div>
+                        }
+                    </div>
+                }
             </div>
             <div className="card-actions">
                 <div className="card-action-buttons">

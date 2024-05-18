@@ -1,0 +1,53 @@
+.online-users-main {
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 150px;
+    width: 250px;
+}
+
+.online-users-title {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.online-users-content {
+    border: 2px solid #23272b;
+    background-color: #1a1d1f;
+    border-radius: 15px;
+}
+
+.online-user-tile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.online-user-tile:hover {
+    background-color: #23272b;
+}
+
+.online-user-pic {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 2px solid #23272b;
+}
+
+.online-user-tile:hover ~ .online-user-pic {
+    border: 2px solid #111315;
+}
+
+.online-user-username {
+    padding-left: 10px;
+    font-weight: bold;
+}
