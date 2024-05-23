@@ -5,4 +5,7 @@
 
 .post-page-body {
     padding-top: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
