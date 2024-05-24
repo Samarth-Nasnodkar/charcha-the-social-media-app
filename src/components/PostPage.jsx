@@ -8,7 +8,7 @@ export const PostPage = () => {
         <div className='post-page-main'>
             <Header />
             <div className="post-page-body">
-                <PostCard />
+                <PostCard actionDisable={true}/>
                 <PostComments />
             </div>
         </div>

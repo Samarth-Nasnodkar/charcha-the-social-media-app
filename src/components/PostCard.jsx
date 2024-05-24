@@ -1,18 +1,14 @@
 import '../styles/PostCard.css';
 import { useNavigate } from 'react-router-dom';
+import {PostActions} from "./PostActions";
 
-export const PostCard = () => {
+export const PostCard = (props) => {
     const imgUrl = 'https://images.unsplash.com/photo-1715588103170-a86bd7a71db4?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
     const additionalAttachmentUrl = 'https://images.unsplash.com/photo-1715586041798-9583f0642747?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
     const remAttachmentUrl = 'https://images.unsplash.com/photo-1715760407683-9435ede6be95?q=80&w=2805&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
     let attachmentCount = 3;
     let postId = 1;
-    let navigate = useNavigate();
-    function routeComments() {
-        const path = '/post/' + postId;
-        navigate(path);
-    }
-
+    const disableActionButtons = props.actionDisable ?? false;
 
     return (
         <div className='post-card-main'>
@@ -47,21 +43,11 @@ export const PostCard = () => {
                     </div>
                 }
             </div>
-            <div className="card-actions">
-                <div className="card-action-buttons">
-                    <div className='card-btn comment-button' onClick={routeComments}>
-                        <i className="fa-solid fa-comments"></i>
-                        <span className="comment-count">5</span>
-                    </div>
-                    <div className="card-btn like-button">
-                        <i className="fa-regular fa-heart"></i>
-                        <span className="like-count">6</span>
-                    </div>
-                    <div className="card-btn share-button">
-                        <i className="fa-solid fa-paper-plane"></i>
-                    </div>
-                </div>
-            </div>
+            {
+                !disableActionButtons
+                &&
+                <PostActions postId={postId}/>
+            }
         </div>
     );
 };
