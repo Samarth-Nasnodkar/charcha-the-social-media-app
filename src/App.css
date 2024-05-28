@@ -8,6 +8,10 @@
   src: url("assets/fonts/Macarons-Ornaments.otf");
 }
 
+body {
+  overscroll-behavior-y: none;
+}
+
 .App {
 
 }

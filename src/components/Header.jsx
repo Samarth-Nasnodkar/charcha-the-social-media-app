@@ -1,12 +1,18 @@
 import '../styles/Header.css';
 import {HeaderSearchBar} from "./HeaderSearchBar";
+import {useNavigate} from "react-router-dom";
 
 export const Header = () => {
+
+    const navigate = useNavigate();
+    const routeHome = () => {
+        navigate('/');
+    };
     return (
         <div className='header-wrapper'>
             <div className='header-main'>
                 <div className="title-section">
-                    <div className="header-title">
+                    <div className="header-title" onClick={routeHome}>
                         Charcha
                         <span className="header-title-icon">
                             &#73;
