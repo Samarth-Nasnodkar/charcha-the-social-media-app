@@ -5,6 +5,7 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import {PostPage} from "./components/PostPage";
+import {ProfilePage} from "./components/ProfilePage";
 
 const router = createBrowserRouter([
     {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
         path: "post/:postId",
         element: <PostPage />,
     },
+    {
+        path: "profile/:profileId",
+        element: <ProfilePage />,
+    }
 ]);
 
 function App() {

@@ -1,4 +1,5 @@
 import '../styles/OnlineUsers.css';
+import {ProfilePicture} from "./ProfilePicture";
 
 export const OnlineUsers = () => {
     const onlineUserCount = 10;
@@ -18,7 +19,8 @@ export const OnlineUsers = () => {
                 {
                     onlineUsers.map((onlineUser) => (
                         <div className='online-user-tile'>
-                            <img className='online-user-pic' src={onlineUser.profileUrl} alt={onlineUser.username} />
+                            {/*<img className='online-user-pic' src={onlineUser.profileUrl} alt={onlineUser.username} />*/}
+                            <ProfilePicture picture={onlineUser.profileUrl} />
                             <div className="online-user-username">{onlineUser.username}</div>
                         </div>
                     ))

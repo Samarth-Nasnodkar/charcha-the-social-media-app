@@ -1,0 +1,4 @@
+.profile-pic-main > img {
+    border-radius: 50%;
+    border: 2px solid #23272b;
+}

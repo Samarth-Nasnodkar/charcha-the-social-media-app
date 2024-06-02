@@ -1,6 +1,7 @@
 import '../styles/Header.css';
 import {HeaderSearchBar} from "./HeaderSearchBar";
 import {useNavigate} from "react-router-dom";
+import {ProfilePicture} from "./ProfilePicture";
 
 export const Header = () => {
 
@@ -30,7 +31,8 @@ export const Header = () => {
                         </div>
                     </div>
                     <div className="profile-picture">
-                        <img src={'https://api.dicebear.com/8.x/micah/svg?seed=Patches'} alt='profile'/>
+                        {/*<img src={'https://api.dicebear.com/8.x/micah/svg?seed=Patches'} alt='profile'/>*/}
+                        <ProfilePicture picture={'https://api.dicebear.com/8.x/micah/svg?seed=Patches'}/>
                         <div className="vert-divider"></div>
                         <div className="profile-username">{'Samarth'}</div>
                     </div>
