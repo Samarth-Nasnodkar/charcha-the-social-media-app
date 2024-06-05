@@ -1,7 +1,8 @@
 .post-page-main {
     background-color: #111315;
-    height: 100vh;
+    height: auto;
     padding-left: 50px;
+    display: flex;
 }
 
 .post-page-body {
