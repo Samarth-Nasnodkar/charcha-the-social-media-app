@@ -10,6 +10,12 @@ export const PostCard = (props) => {
     let attachmentCount = 3;
     let postId = 1;
     const disableActionButtons = props.actionDisable ?? false;
+    const userId = props.userId ?? 1;
+    const navigate = useNavigate();
+
+    const routeToUserProfilePage = () => {
+        navigate('/profile/' + userId);
+    };
 
     return (
         <div className='post-card-main'>
@@ -20,8 +26,8 @@ export const PostCard = (props) => {
                         <ProfilePicture picture={'https://api.dicebear.com/8.x/micah/svg?seed=Patches'} alt="profile" />
                     </div>
                     <div className="card-text">
-                        <div className="card-handle">
-                            Samarth
+                        <div className="card-handle" onClick={routeToUserProfilePage}>
+                            <span className="handle-name">Samarth</span>
                             <span className="handle-username">@samarth</span>
                         </div>
                         <div className="card-content">
